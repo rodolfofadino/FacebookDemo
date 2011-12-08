@@ -18,9 +18,31 @@ namespace DemoFacebook.BL
         private string _aplicationSecret = "";
         private string _token = "";
 
-        public string AplicationKey{ get; set; }
+        public string AplicationKey
+        {
+            get
+            {
+                if (_aplicationKey.Length == 0)
+                {
+                    _aplicationKey = ConfigurationManager.AppSettings["Facebook_aplicationKey"];
+                }
+                return _aplicationKey;
+            }
+            set { _aplicationKey = value; }
+        }
 
-        public string AplicationSecret { get; set; }
+        public string AplicationSecret
+        {
+            get
+            {
+                if (_aplicationSecret.Length == 0)
+                {
+                    _aplicationSecret = ConfigurationManager.AppSettings["Facebook_aplicationSecret"]; //application secret
+                }
+                return _aplicationSecret;
+            }
+            set { _aplicationSecret = value; }
+        }
 
         public string Token{ get; set; }
 
