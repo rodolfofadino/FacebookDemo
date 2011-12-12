@@ -40,7 +40,7 @@ namespace DemoFacebook.BL
             {
                 if (_aplicationSecret.Length == 0)
                 {
-                    _aplicationSecret = ConfigurationManager.AppSettings["Facebook_aplicationSecret"]; //application secret
+                    _aplicationSecret = ConfigurationManager.AppSettings["Facebook_aplicationSecret"];
                 }
                 return _aplicationSecret;
             }

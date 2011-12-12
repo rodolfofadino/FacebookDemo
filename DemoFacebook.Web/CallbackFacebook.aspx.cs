@@ -8,23 +8,28 @@ using DemoFacebook.BL;
 
 namespace DemoFacebook.Web
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class CallbackFacebook : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string url = "";
             AuthFacebook oAuth = new AuthFacebook();
             oAuth.CallBack_Url = "http://localhost:1789/CallbackFacebook.aspx";
 
-            if(Session["token"] ==null)
+
+            if (Request["code"] == null)
             {
                 Response.Redirect(oAuth.GetAuthorizationLink());
             }
             else
             {
-                oAuth.Token = Session["token"].ToString();
-                
-                var url = "https://graph.facebook.com/me/likes?access_token=" + oAuth.Token;
-                string json = oAuth.Request(AuthFacebook.Method.GET, url, String.Empty);
+                oAuth.GetAccessToken(Request["code"]);
+
+                if (oAuth.Token.Length > 0)
+                {
+                    Session["token"] = oAuth.Token;
+                    Response.Redirect("~/Default.aspx");
+                }
             }
         }
     }
