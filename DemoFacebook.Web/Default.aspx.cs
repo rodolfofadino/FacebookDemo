@@ -15,16 +15,17 @@ namespace DemoFacebook.Web
             AuthFacebook oAuth = new AuthFacebook();
             oAuth.CallBack_Url = "http://localhost:1789/CallbackFacebook.aspx";
 
-            if(Session["token"] ==null)
+            if (Session["token"] == null)
             {
                 Response.Redirect(oAuth.GetAuthorizationLink());
             }
             else
             {
                 oAuth.Token = Session["token"].ToString();
-                
-                var url = "https://graph.facebook.com/me/likes?access_token=" + oAuth.Token;
+
+                var url = "https://graph.facebook.com/me?access_token=" + oAuth.Token;
                 string json = oAuth.Request(AuthFacebook.Method.GET, url, String.Empty);
+                ltrJson.Text = json;
             }
         }
     }
