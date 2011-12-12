@@ -13,7 +13,6 @@ namespace DemoFacebook.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             AuthFacebook oAuth = new AuthFacebook();
-            oAuth.CallBack_Url = "http://localhost:1789/CallbackFacebook.aspx";
 
             if (Session["token"] == null)
             {

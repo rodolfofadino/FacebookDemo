@@ -14,7 +14,6 @@ namespace DemoFacebook.Web
         {
             string url = "";
             AuthFacebook oAuth = new AuthFacebook();
-            oAuth.CallBack_Url = "http://localhost:1789/CallbackFacebook.aspx";
 
 
             if (Request["code"] == null)

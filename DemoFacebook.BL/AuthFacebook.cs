@@ -15,7 +15,7 @@ namespace DemoFacebook.BL
         public enum Method { GET, POST };
         public const string Authorize = "https://graph.facebook.com/oauth/authorize";
         public const string Access_Token = "https://graph.facebook.com/oauth/access_token";
-        public string CallBack_Url = "";
+        public string CallBack_Url = ConfigurationManager.AppSettings["Facebook_CallbackUrl"];
 
         private string _aplicationKey = "";
         private string _aplicationSecret = "";
