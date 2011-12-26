@@ -12,12 +12,16 @@ namespace DemoFacebook.MVC.SDK.Controllers
 {
     public class HomeController : Controller
     {
+        private const string ExtendedPermissions = "user_about_me,publish_stream";
+        
+        [FacebookAuthorize(Permissions = ExtendedPermissions, LoginUrl = "/Home/LogOn?ReturnUrl=~/Home")]
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
+        [FacebookAuthorize(Permissions = ExtendedPermissions, LoginUrl = "/Home/LogOn?ReturnUrl=~/Home")]
         public ActionResult MensagemPost(string message)
         {
             return RedirectToAction("Index", new { success = true });
