@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFacebook.BL", "DemoFace
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFacebook.Web", "DemoFacebook.Web\DemoFacebook.Web.csproj", "{EB0A1D5A-612D-46E4-BDF1-015409A3F986}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFacebook.MVC.SDK", "DemoFacebook.MVC.SDK\DemoFacebook.MVC.SDK.csproj", "{F34D3325-23A2-42EF-9DD1-7893D366A07C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{EB0A1D5A-612D-46E4-BDF1-015409A3F986}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0A1D5A-612D-46E4-BDF1-015409A3F986}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB0A1D5A-612D-46E4-BDF1-015409A3F986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34D3325-23A2-42EF-9DD1-7893D366A07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34D3325-23A2-42EF-9DD1-7893D366A07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34D3325-23A2-42EF-9DD1-7893D366A07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34D3325-23A2-42EF-9DD1-7893D366A07C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
