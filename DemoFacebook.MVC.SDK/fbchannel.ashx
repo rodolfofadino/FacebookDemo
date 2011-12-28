@@ -1,4 +1,4 @@
- <%@ WebHandler Language="C#" Class="CS_AspNetMvc3_JsSdk.FacebookChannelHandler" %>
+ <%@ WebHandler Language="C#" Class="DemoFacebook.MVC.SDK.FacebookChannelHandler" %>
  
 namespace DemoFacebook.MVC.SDK
 {

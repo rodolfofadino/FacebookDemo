@@ -40,10 +40,10 @@ namespace DemoFacebook.MVC.SDK.Controllers
                         return new RedirectResult(returnUrl);
                     }
                 }
-
+                
                 return RedirectToAction("Index", "Home");
             }
-
+            
             ViewBag.ExtendedPermissions = ExtendedPermissions;
             return View();
         }
