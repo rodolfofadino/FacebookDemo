@@ -17,6 +17,17 @@ namespace DemoFacebook.MVC.SDK.Controllers
         [FacebookAuthorize(Permissions = ExtendedPermissions, LoginUrl = "/Home/LogOn?ReturnUrl=~/Home")]
         public ActionResult Index()
         {
+            var fb = new FacebookWebClient();
+            dynamic me = fb.Get("me");
+
+            ViewBag.ProfilePictureUrl = string.Format("http://graph.facebok.com/{0}/picture", me.id);
+            ViewBag.Name = me.name;
+            ViewBag.FirstName = me.first_name;
+            ViewBag.LastName = me.last_name;
+
+            ViewBag.MessagePostSuccess = Request.QueryString.AllKeys.Contains("success") &&
+                                         Request.QueryString["success"] == "True";
+
             return View();
         }
 
