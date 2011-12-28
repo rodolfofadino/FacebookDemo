@@ -13,7 +13,7 @@ namespace DemoFacebook.MVC.SDK.Controllers
     public class HomeController : Controller
     {
         private const string ExtendedPermissions = "user_about_me,publish_stream";
-        
+
         [FacebookAuthorize(Permissions = ExtendedPermissions, LoginUrl = "/Home/LogOn?ReturnUrl=~/Home")]
         public ActionResult Index()
         {
@@ -26,7 +26,7 @@ namespace DemoFacebook.MVC.SDK.Controllers
             ViewBag.LastName = me.last_name;
 
             ViewBag.MessagePostSuccess = Request.QueryString.AllKeys.Contains("success") &&
-                                         Request.QueryString["success"] == "True";
+                                            Request.QueryString["success"] == "True";
 
             return View();
         }
@@ -58,10 +58,10 @@ namespace DemoFacebook.MVC.SDK.Controllers
                         return new RedirectResult(returnUrl);
                     }
                 }
-                
+
                 return RedirectToAction("Index", "Home");
             }
-            
+
             ViewBag.ExtendedPermissions = ExtendedPermissions;
             return View();
         }
