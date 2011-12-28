@@ -35,6 +35,13 @@ namespace DemoFacebook.MVC.SDK.Controllers
         [FacebookAuthorize(Permissions = ExtendedPermissions, LoginUrl = "/Home/LogOn?ReturnUrl=~/Home")]
         public ActionResult MensagemPost(string message)
         {
+            var fb = new FacebookWebClient();
+
+            dynamic parameters = new ExpandoObject();
+            parameters.message = message;
+
+            dynamic result = fb.Post("me/feed", parameters);
+
             return RedirectToAction("Index", new { success = true });
         }
 
