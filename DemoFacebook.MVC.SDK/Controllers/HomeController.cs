@@ -29,6 +29,22 @@ namespace DemoFacebook.MVC.SDK.Controllers
 
         public ActionResult LogOn(string returnUrl)
         {
+            var fbWebContext = new FacebookWebContext(FacebookApplication.Current, ControllerContext.HttpContext);
+
+            if (fbWebContext.IsAuthorized(ExtendedPermissions.Split(',')))
+            {
+                if (!string.IsNullOrWhiteSpace(returnUrl))
+                {
+                    if (Url.IsLocalUrl(returnUrl))
+                    {
+                        return new RedirectResult(returnUrl);
+                    }
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.ExtendedPermissions = ExtendedPermissions;
             return View();
         }
 
